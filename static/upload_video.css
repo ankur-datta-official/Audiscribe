@@ -1,0 +1,67 @@
+/* upload_video.css */
+.vid-container {
+    text-align: center;
+    padding: 80px 500px;
+    background: var(--container-background);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.vid-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: var(--secondary-text-color);
+}
+
+.vid-upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.custom-file-label {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-label:hover {
+    background-color: #45a049;
+}
+
+
+.vid-submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.vid-submit-button:hover {
+    background-color: #45a049;
+}
+
+.vid-note {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    color: var(--secondary-text-color);
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--input-background);
+    color: var(--text-color);
+}

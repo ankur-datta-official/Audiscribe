@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiscribe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>AI Transcribe audio to <span class="highlight">text</span></h1>
+        <p>
+            Looking for the best way to convert audio to text? Our 
+            <a href="{{ url_for('transcribe') }}" class="link">audio to text converter</a> makes it simple and efficient. 
+            Whether it's an audio file or any other format, you can easily convert audio to text here. 
+            Enjoy no limits, hassle-free usage, and the bests tools for transcription. Try it now—fully free!
+        </p>
+    
+        <!-- Upload Section -->
+        <div class="upload-container">
+            <form action="/transcribe" method="POST" enctype="multipart/form-data">
+                <img src="{{ url_for('static', filename='assets/img9.jpeg') }}" alt="Audio Icon" class="audio-icon">
+                <p class="upload-text">Drag and drop an audio file to convert, no limit (∞) on audio length </p>
+                <div class="separator">Or</div>
+
+                <input type="file" id="audio_file" name="audio_file" accept="audio/*" onchange="displayFileName()" style="display:none;" required/>
+                <label for="audio_file" class="upload-label">Choose an Audio</label>
+                <input type="text" id="fileName" placeholder="No file chosen" readonly />
+                <button type="submit" class="convert-btn">Convert to Text</button>
+            </form>
+        </div>
+
+        <!-- Result Section -->
+        {% if transcript %}
+        <div class="result-container">
+            <h3>Transcribed Text:</h3>
+            <textarea rows="10" cols="60" readonly>{{ transcript }}</textarea>
+            
+            <br>
+            <a href="{{ url_for('download_file', filename=text_filename) }}" class="download-btn">Download as .txt</a>
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    function displayFileName() {
+        const fileInput = document.getElementById('audio_file');
+        const fileNameInput = document.getElementById('fileName');
+        if (fileInput.files.length > 0) {
+            fileNameInput.value = fileInput.files[0].name;
+        } else {
+            fileNameInput.value = "No file chosen";
+        }
+    }
+</script>

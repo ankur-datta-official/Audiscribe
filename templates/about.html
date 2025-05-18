@@ -1,0 +1,33 @@
+<!-- About Section -->
+<div class="about-container">
+    <h1>About Audiscribe</h1>
+    <p>Audiscribe is an advanced AI-powered software that seamlessly converts audio files into accurate text transcripts. It supports multiple languages, punctuation accuracy, and speaker identification.</p>
+
+    <div class="features">
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='assets/img1.jpg') }}" alt="Transcription">
+            <h2>High Accuracy</h2>
+            <p>Audiscribe uses state-of-the-art machine learning models for accurate transcription.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='assets/img2.jpg') }}" alt="Multi-language">
+            <h2>Multi-Language Support</h2>
+            <p>Transcribe audio in over 30 languages with precise recognition.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='assets/img3.jpg') }}" alt="Security">
+            <h2>Data Security</h2>
+            <p>All transcriptions are securely encrypted, ensuring privacy.</p>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>Watch Audiscribe in Action</h2>
+        <video controls>
+            <source src="{{ url_for('static', filename='videos/demo.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>

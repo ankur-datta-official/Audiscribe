@@ -1,0 +1,171 @@
+/* ===== General Styles ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== Main Container ===== */
+.unl-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 60px 80px;
+    background: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== Header Styling ===== */
+.unl-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.unl-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.unl-title {
+    font-size: 42px;
+    color: #333;
+    font-weight: bold;
+}
+
+.unl-highlight {
+    background: rgb(153, 132, 255); /* Lime green background */
+    color: #fbfbfb;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+
+/* ===== Feature Section ===== */
+.unl-features {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.unl-feature {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.unl-feature:hover {
+    transform: translateY(-5px);
+    background: #f1f1f1;
+}
+
+/* ===== Icon Styles ===== */
+.unl-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.unl-feature-text h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.unl-feature-text p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+/* ===== Button Styling ===== */
+.unl-toggle-btn {
+    display: block;
+    width: 180px;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.unl-toggle-btn:hover {
+    background: #0056b3;
+}
+
+/* ===== Dark Mode Styles ===== */
+.dark-mode {
+    background: #1e1e1e;
+    color: #f5f5f5; /* Off-white text color */
+}
+
+/* Background pattern in dark mode */
+
+.dark-mode .unl-container {
+    background: #2c2c2c;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .unl-title {
+    color: #f0f0f0;
+}
+
+.dark-mode .unl-highlight {
+    background: #ffa618;
+}
+
+.dark-mode .unl-feature {
+    border-bottom: 1px solid #444;
+}
+
+.dark-mode .unl-feature:hover {
+    background: #333;
+}
+
+.dark-mode .unl-feature-text h2 {
+    color: #f0f0f0;
+}
+
+.dark-mode .unl-feature-text p {
+    color: #ccc;
+}
+
+.dark-mode .unl-toggle-btn {
+    background: #f39c12;
+    color: #1c1c1c;
+}
+
+.dark-mode .unl-toggle-btn:hover {
+    background: #e67e22;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .unl-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .unl-icon {
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Format Conversion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='letsGo.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+    <div class="transcription-section">
+        <h1>Convert your audio to text with <span class="highlight">Audiscribe</span></h1>
+        <p class="subtitle">
+            Transcribe dozens of languages. Organise your interview transcripts, search, edit and share them with others. 
+            Start your free trial and convert your audio and video into text now. No credit card required.
+        </p>
+    </div>
+
+    <section class="content">
+        <h2>Audiscribe supports a whole range of audio formats that you can convert into text!</h2>
+
+        <table class="file-table">
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>File Type</th>
+                    <th>File output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3GA</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert 3GA files to text</a></td>
+                </tr>
+                <tr>
+                    <td>AAC</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert AAC files to text</a></td>
+                </tr>
+                <tr>
+                    <td>AIFC</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert AIFC files to text</a></td>
+                </tr>
+                <tr>
+                    <td>MP1</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert MP1 files to text</a></td>
+                </tr>
+                <tr>
+                    <td>MP2</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert MP2 files to text</a></td>
+                </tr>
+                <tr>
+                    <td>MP3</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert MP3 files to text</a></td>
+                </tr>
+                <tr>
+                    <td>OGA</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert OGA files to text</a></td>
+                </tr>
+                <tr>
+                    <td>OGG</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert OGG files to text</a></td>
+                </tr>
+                <tr>
+                    <td>WAV</td>
+                    <td>Audio</td>
+                    <td><a href="{{ url_for('transcribe') }}">Convert WAV files to text</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>

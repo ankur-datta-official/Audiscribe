@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technologies Used - Audiscribe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>Technologies Used</h1>
+
+        <div class="tech-section">
+            <h2>1. Python</h2>
+            <p>Python is the core language used for backend development, especially for handling speech recognition, machine learning, and processing data using its powerful libraries like <code>speech_recognition</code>, <code>pydub</code>, and <code>moviepy</code>.</p>
+        </div>
+
+        <div class="tech-section">
+            <h2>2. Flask</h2>
+            <p>Flask is a lightweight Python web framework used to serve the frontend pages and link the backend processing with user interactions. It handles routes, file uploads, and dynamic rendering with Jinja2 templating.</p>
+        </div>
+
+        <div class="tech-section">
+            <h2>3. TensorFlow / Keras</h2>
+            <p>Used to load and deploy the pre-trained deep learning model <code>asl_model.h5</code> for classifying American Sign Language (ASL) gestures from video input. These frameworks enable real-time image-based classification using Convolutional Neural Networks (CNN).</p>
+        </div>
+
+        <div class="tech-section">
+            <h2>4. HTML, CSS & JavaScript</h2>
+            <p>The user interface is built using standard web technologies. HTML structures the content, CSS styles the layout and appearance, and JavaScript enhances interactivity (e.g., file input behavior, theme toggling).</p>
+        </div>
+
+        <div class="tech-section">
+            <h2>5. Speech Recognition Library</h2>
+            <p>This Python library converts audio (e.g., WAV or MP3) to text. It uses Google’s Web Speech API to interpret audio content, which is then rendered on the webpage and saved as a downloadable .txt file.</p>
+        </div>
+
+        <div class="tech-section">
+            <h2>6. MoviePy & PyDub</h2>
+            <p>MoviePy is used to extract audio from video files, and PyDub processes and converts the audio into suitable formats for recognition. These tools are essential for handling multimedia data.</p>
+        </div>
+
+        <div class="tech-section">
+            <h2>7. OpenCV</h2>
+            <p>OpenCV is optionally used for handling image and video frame extraction during sign language recognition. It helps process video streams and isolate frames for model inference.</p>
+        </div>
+
+        <div class="tech-section">
+            <h2>8. Bootstrap (Optional)</h2>
+            <p>If added, Bootstrap enhances UI components with responsive design and prebuilt classes for buttons, forms, and layout alignment.</p>
+        </div>
+
+        <div class="tech-section">
+            <h2>9. Google Fonts</h2>
+            <p>The “Inter” font family is imported for a clean and modern look across all frontend pages using Google Fonts CDN.</p>
+        </div>
+    </div>
+</body>
+</html>

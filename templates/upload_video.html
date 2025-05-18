@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload_video.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="vid-container">
+        <h1>Convert Your Video to Text</h1>
+        <p class="vid-description">
+            Easily extract audio from your video files and transcribe them into readable text. 
+            Upload a supported video file, and our system will handle the rest — fast and securely.
+        </p>
+
+        <form action="/upload_video" method="POST" enctype="multipart/form-data">
+            <label for="fileInput" class="custom-file-label">Choose Video</label>
+            <input type="file" id="fileInput" name="file" accept="video/*" required>
+            <input type="text" id="fileName" placeholder="No file chosen" readonly>
+            <button type="submit" class="vid-submit-button">Extract Audio & Convert</button>
+        </form>
+
+        <p class="vid-note">
+            Note: Only video files are supported. The audio will be automatically extracted and processed into text format.
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function () {
+            const fileName = this.files[0]?.name || "No file chosen";
+            document.getElementById('fileName').value = fileName;
+        });
+    </script>
+</body>
+
+</html>

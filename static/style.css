@@ -1,0 +1,661 @@
+/* Navbar container */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; /* Ensures uniform font size */
+    transition: all 0.3s ease-in-out; /* Smooth transition between themes */
+}
+
+/* Gradient border top */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-top: 5px solid transparent;
+    background: white;
+    border-image: linear-gradient(to right, #FF7A18, #AF2CF5, #00BFFF) 1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Left section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    font-size: 18px;
+    color: #FF4500;
+    font-weight: 700;
+}
+
+/* Center links */
+.navbar-center a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.navbar-center a:hover {
+    color: #FF4500;
+}
+
+/* Dropdown */
+.dropdown {
+    display: inline-block;
+}
+
+.dropbtn {
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dropbtn:hover {
+    color: #FF4500;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+/* Right section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Light Mode */
+.light-mode {
+    background: #ffffff;
+    color: #000000; /* Default text color */
+}
+
+/* Dark mode */
+.dark-mode {
+    background: #1e1e1e;
+    color: #f5f5f5; /* Off-white text color */
+}
+
+/* Ensuring consistent text styling in both light and dark mode */
+body, .navbar, .navbar-left, .navbar-center a, .dropdown .dropbtn, .dropdown-content a, .search-box, .search-btn, .brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: inherit;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dark mode Navbar */
+.dark-mode .navbar {
+    background: #1e1e1e;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8); /* Orange glow effect */
+    border-image: linear-gradient(to right, #FF4500, #AF2CF5, #00BFFF) 1; /* Gradient top border */
+}
+
+/* Ensuring all text elements remain off-white in dark mode */
+.dark-mode a,
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode span {
+    color: #f5f5f5 !important;
+}
+
+/* Dark mode dropdown */
+.dark-mode .dropdown-content {
+    background: #333;
+    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3); /* Soft glow */
+}
+
+.dark-mode .dropdown-content a {
+    color: #f5f5f5;
+}
+
+.dark-mode .dropdown-content a:hover {
+    background: rgba(255, 165, 0, 0.2);
+}
+
+/* Input Fields */
+.dark-mode input,
+.dark-mode textarea {
+    background: #2a2a2a;
+    color: #f5f5f5;
+    border: 1px solid #444;
+    font-size: 16px; /* Ensures consistent font size */
+    font-family: 'Inter', sans-serif; /* Ensures consistent font family */
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: #bbb;
+}
+
+/* Dark mode toggle button */
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px;
+    color: inherit; /* Adapts to theme */
+}
+
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+a.link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
+
+/* Audio Icon */
+.audio-icon {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+/* Separator */
+.separator {
+    margin: 20px 0;
+    color: #bbb;
+    font-size: 18px;
+}
+
+/* Upload Button */
+.upload-btn {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.upload-btn:hover {
+    background: #1558c8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .upload-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.highlight {
+    background: rgb(153, 132, 255); /* Lime green background */
+    color: #fbfbfb;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 900;
+}
+
+.dark-mode .highlight {
+    background: #ffa618;
+}
+
+
+/* ===== "Let's Go" Button Styling ===== */
+.lets-go-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #007bff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lets-go-btn:hover {
+    background: #0056b3;
+    box-shadow: 0 0 20px #0056b3;
+    transform: scale(1.05);
+}
+
+/* ===== Dark Mode Button Styling ===== */
+.dark-mode .lets-go-btn {
+    background: #ffa618;
+    box-shadow: 0 0 10px #ffa618;
+    color: #ffffff;
+}
+
+.dark-mode .lets-go-btn:hover {
+    background: #f39c12;
+    box-shadow: 0 0 10px #f39c12;
+    transform: scale(1.05);
+}
+
+/* Responsive Button Adjustment */
+@media (max-width: 768px) {
+    .lets-go-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Upload Section */
+.upload-container {
+    color: #333;          /* Light mode text color */
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    text-align: center;
+    margin: 30px auto;
+    transition: all 0.3s ease-in-out;
+    width: 80%;
+    max-width: 700px;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* Hover Effect */
+.upload-container:hover {
+    transform: translateY(-5px);
+}
+
+.upload-container:hover .audio-icon {
+    transform: scale(1.1);
+}
+
+/* Dark Mode */
+.dark-mode .upload-container {
+    background: #2c2c2c;   /* Dark mode background */
+    color: #f0f0f0;        /* Dark mode text color */
+    border: 2px dashed #555;
+}
+
+.dark-mode .result-container {
+    background: #2c2c2c;   /* Dark mode background */
+    color: #f0f0f0;        /* Dark mode text color */
+}
+
+/* Audio Icon */
+.audio-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    border-radius: 15px;
+}
+
+/* Text Style */
+.upload-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Dark Mode Text */
+.dark-mode .upload-text {
+    color: #ddd; /* Light text in dark mode */
+}
+
+/* Separator */
+.separator {
+    font-size: 16px;
+    color: #888;
+    margin: 15px 0;
+}
+
+/* Dark Mode Separator */
+.dark-mode .separator {
+    color: #bbb;
+}
+
+/* Upload Button */
+.upload-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Dark Mode Button */
+.dark-mode .convert-btn, .upload-label {
+    background: #ffa618;
+    color: #ffffff;
+}
+
+.dark-mode .convert-btn:hover, .upload-label:hover {
+    background: #f39c12;
+    box-shadow: 0 0 12px #64C38A;
+}
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.audio-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.upload-text {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.separator {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #888;
+}
+
+/* Upload Button */
+input[type="file"] {
+    display: none; /* Hide file input */
+}
+
+.upload-btn, .convert-btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+    margin: 10px;
+}
+
+.upload-btn:hover, .convert-btn:hover {
+    background: #0056b3;;
+    box-shadow: 0 0 10px #0056b3;
+}
+
+/* Result Section */
+/* .result-container {
+    width: 80%;
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 12px;
+} */
+
+textarea {
+    width: 100%;
+    height: 200px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.download-btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #2980b9;
+}
+
+.upload-label, .convert-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+.upload-label:hover, .convert-button:hover {
+    background-color: #0056b3;
+}
+
+.dark-mode .upload-label, .convert-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #ffa618;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+.dark-mode .upload-label:hover, .convert-button:hover {
+    background-color: #80a23b;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+/* Technologies style */
+.tech-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.tech-section h1 {
+    color: #61b86f;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tech-section section {
+    margin-bottom: 25px;
+}
+
+.tech-section h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tech-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Technologies style dark-mode */
+.dark-mode .tech-section {
+    background-color: #2a2a2a;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.03);
+}
+
+.dark-mode .tech-section h1 {
+    color: #7df58c;
+}
+
+.dark-mode .tech-section h2 {
+    color: #dddddd;
+}
+
+.dark-mode .tech-section p {
+    color: #ccc;
+}
+
+
+/* documentation style  */
+
+.doc-download-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.doc-container {
+    background: #ffffff;
+    padding: 50px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+}
+
+.doc-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.doc-container .doc-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.doc-download-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #4caf50;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.doc-download-btn:hover {
+    background-color: #449d48;
+}
+
+.doc-bottom-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #777;
+}
+
+/* documentation style dark-mode */
+.dark-mode .doc-container {
+    background: #1f1f1f;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .doc-container h1 {
+    color: #eee;
+}
+
+.dark-mode .doc-container .doc-description,
+.dark-mode .doc-bottom-text {
+    color: #bbb;
+}
+
+.dark-mode .doc-download-btn {
+    background-color: #66bb6a;
+    color: #1f1f1f;
+}
+
+.dark-mode .doc-download-btn:hover {
+    background-color: #5aa85e;
+}

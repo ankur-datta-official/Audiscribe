@@ -1,0 +1,64 @@
+<nav class="navbar" style="position: sticky;">
+    <div class="navbar-left">
+        <a href="/" style="text-decoration: none; display: flex; align-items: center;">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Microphone" class="logo" style="height: 50px; width: 60px;"> &nbsp;
+            <span class="brand" style="font-size: 24px; color: inherit;"><strong>AUDISCRIBE</strong></span>
+        </a>
+    </div>
+    
+    <div class="navbar-center">
+        <a href="{{ url_for('technologies') }}">Technology</a>
+        <a href="{{ url_for('documentation') }}">Documentation</a>
+        <a href="{{ url_for('upload_video') }}">Special Features</a>
+        <div class="dropdown">
+            <button class="dropbtn">Tools ▼</button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('transcribe') }}">3GA to Text</a>
+                <a href="{{ url_for('transcribe') }}">AAC to Text</a>
+                <a href="{{ url_for('transcribe') }}">AIFC to Text</a>
+                <a href="{{ url_for('transcribe') }}">MP1 to Text</a>
+                <a href="{{ url_for('transcribe') }}">MP2 to Text</a>
+                <a href="#{{ url_for('transcribe') }}">MP3 to Text</a>
+                <a href="{{ url_for('transcribe') }}">OGA to Text</a>
+                <a href="{{ url_for('transcribe') }}">OGG to Text</a>
+                <a href="{{ url_for('transcribe') }}">WAV to Text</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-section">
+        <!-- "Let's Go" Button -->
+        <button class="lets-go-btn" onclick="window.location.href='/content';">Let's Go 🚀</button>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" style="padding-left: 15px; padding-right: 15px;">
+            <span id="theme-icon">🌙</span>
+        </button>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
+        const currentTheme = localStorage.getItem("theme") || "light";
+
+        // Apply stored theme
+        if (currentTheme === "dark") {
+            document.body.classList.add("dark-mode");
+            themeIcon.textContent = "☀️"; // Light mode icon
+        }
+
+        // Toggle Theme Function
+        themeToggle.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+            const isDarkMode = document.body.classList.contains("dark-mode");
+
+            // Change Icon
+            themeIcon.textContent = isDarkMode ? "☀️" : "🌙";
+
+            // Store Preference
+            localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+        });
+    });
+</script>
